@@ -49,7 +49,7 @@
       </div>
     <?php endif; ?>
 
-    <section class="l-content juiced-main col-12 col-sm-6">
+    <section class="l-content juiced-main col-12 col-sm-6" role="region">
       <div>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
@@ -60,7 +60,7 @@
       <?php print render($title_suffix); ?>
 
       <?php if ($tabs): ?>
-        <div class="tabs">
+        <div class="tabs" role="tablist" aria-label="<?php print t('Admin Content Tabs'); ?>">
           <?php print $tabs; ?>
         </div>
       <?php endif; ?>
@@ -70,7 +70,7 @@
     </div>
     </section>
 
-    <section class="l-content-2 juiced-main-split col-12 col-sm-6">
+    <section class="l-content-2 juiced-main-split col-12 col-sm-6" role="region">
       <div>
       <?php if ($content['content2']): ?>
       <?php print $content['content2']; ?>
@@ -80,7 +80,7 @@
   </main>
 
   <?php if ($content['triptych_first'] || $content['triptych_middle'] || $content['triptych_last']): ?>
-    <section class="l-triptych container">
+    <section class="l-triptych container" role="region">
       <div class="l-triptych-first col-12 col-sm-4">
         <?php print $content['triptych_first']; ?>
       </div>
@@ -94,7 +94,7 @@
   <?php endif; ?>
 
   <?php if ($content['big_statement']): ?>
-      <section class="l-big-statement col-12">
+      <section class="l-big-statement col-12" role="region">
         <?php print $content['big_statement']; ?>
       </section>
   <?php endif; ?>
@@ -106,7 +106,7 @@
   <?php endif; ?>
 
   <?php if ($content['footer']): ?>
-    <footer class="l-footer col-12" role="navigation" aria-label="<?php print t('Footer navigation'); ?>">
+    <footer class="l-footer col-12" role="contentinfo" aria-label="<?php print t('Footer navigation'); ?>">
       <?php print $content['footer']; ?>
     </footer>
   <?php endif; ?>

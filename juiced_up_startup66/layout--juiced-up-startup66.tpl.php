@@ -50,7 +50,7 @@
     </div>
    <?php endif; ?>
 
-  <section class="l-content col-12">
+  <section class="l-content col-12" role="region">
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
         <h1 class="page-title">
@@ -60,7 +60,7 @@
       <?php print render($title_suffix); ?>
 
       <?php if ($tabs): ?>
-        <div class="tabs">
+        <div class="tabs" role="tablist" aria-label="<?php print t('Admin Content Tabs'); ?>">
           <?php print $tabs; ?>
         </div>
       <?php endif; ?>
@@ -71,7 +71,7 @@
   </main>
 
   <?php if ($content['triptych_first'] || $content['triptych_middle'] || $content['triptych_last']): ?>
-    <section class="l-triptych container">
+    <section class="l-triptych container" role="region">
       <div class="l-triptych-first col-12 col-sm-4">
         <?php print $content['triptych_first']; ?>
       </div>
@@ -85,18 +85,18 @@
   <?php endif; ?>
 
   <?php if ($content['big_statement']): ?>
-      <section class="l-big-statement col-12">
+      <section class="l-big-statement col-12" role="region">
         <?php print $content['big_statement']; ?>
       </section>
   <?php endif; ?>
 
   <?php if ($content['sidebar_first'] || $content['sidebar_second'] ): ?>
     <div class="container">
-        <aside class="l-sidebar sidebar-first col-12 col-sm-6">
+        <aside class="l-sidebar sidebar-first col-12 col-sm-6" role="complementary" aria-label="<?php print t('Complementary information'); ?>">
         <?php print $content['sidebar_first']; ?>
         </aside>
 
-        <aside class="l-sidebar sidebar-second col-12 col-sm-6">
+        <aside class="l-sidebar sidebar-second col-12 col-sm-6" role="complementary" aria-label="<?php print t('Complementary information'); ?>">
         <?php print $content['sidebar_second']; ?>
         </aside>
     </div>
@@ -104,12 +104,12 @@
 
   <?php if ($content['big_statement_second']): ?>
     <div class="container">
-        <section class="l-big-statement-second col-12 col-sm-8">
+        <section class="l-big-statement-second col-12 col-sm-8" role="region">
         <?php print $content['big_statement_second']; ?>
         </section>
 
         <?php if ($content['sidebar_third']): ?>
-        <aside class="sidebar-third col-12 col-sm-4">
+        <aside class="sidebar-third col-12 col-sm-4" role="complementary" aria-label="<?php print t('Complementary information'); ?>">
         <?php print $content['sidebar_third']; ?>
         </aside>
         <?php endif; ?>
@@ -123,7 +123,7 @@
   <?php endif; ?>
 
   <?php if ($content['footer']): ?>
-    <footer class="l-footer col-12" role="navigation" aria-label="<?php print t('Footer navigation'); ?>">
+    <footer class="l-footer col-12" role="contentinfo" aria-label="<?php print t('Footer navigation'); ?>">
       <?php print $content['footer']; ?>
     </footer>
   <?php endif; ?>

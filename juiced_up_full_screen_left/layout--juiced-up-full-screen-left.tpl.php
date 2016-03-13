@@ -31,12 +31,6 @@
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
   </div>
 
-  <?php if ($messages): ?>
-    <div class="l-messages" role="contentinfo" aria-label="<?php print t('Status messages'); ?>">
-      <?php print $messages; ?>
-    </div>
-  <?php endif; ?>
-
   <main class="l-content container" role="main" aria-label="<?php print t('Main content'); ?>">
     <?php if ($content['header']): ?>
       <header class="l-header col-1" role="banner" aria-label="<?php print t('Site header'); ?>">
@@ -46,7 +40,13 @@
 
       <a id="main-content"></a>
 
-    <section class="l-content juiced-main col-11">
+    <section class="l-content juiced-main col-11" role="region">
+      <?php if ($messages): ?>
+        <div class="l-messages" role="contentinfo" aria-label="<?php print t('Status messages'); ?>">
+        <?php print $messages; ?>
+        </div>
+      <?php endif; ?>
+
       <div>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
@@ -57,7 +57,7 @@
       <?php print render($title_suffix); ?>
 
       <?php if ($tabs): ?>
-        <div class="tabs">
+        <div class="tabs" role="tablist" aria-label="<?php print t('Admin Content Tabs'); ?>">
           <?php print $tabs; ?>
         </div>
       <?php endif; ?>
@@ -69,7 +69,7 @@
   </main>
 
   <?php if ($content['triptych_first'] || $content['triptych_middle'] || $content['triptych_last']): ?>
-    <section class="l-triptych container">
+    <section class="l-triptych container" role="region">
       <div class="l-triptych-first col-12 col-sm-4">
         <?php print $content['triptych_first']; ?>
       </div>
@@ -83,7 +83,7 @@
   <?php endif; ?>
 
   <?php if ($content['big_statement']): ?>
-      <section class="l-big-statement col-12">
+      <section class="l-big-statement col-12" role="region">
         <?php print $content['big_statement']; ?>
       </section>
   <?php endif; ?>
@@ -95,7 +95,7 @@
   <?php endif; ?>
 
   <?php if ($content['footer']): ?>
-    <footer class="l-footer col-12" role="navigation" aria-label="<?php print t('Footer navigation'); ?>">
+    <footer class="l-footer col-12" role="contentinfo" aria-label="<?php print t('Footer navigation'); ?>">
       <?php print $content['footer']; ?>
     </footer>
   <?php endif; ?>

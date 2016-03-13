@@ -17,7 +17,7 @@ These layouts are not for every demographic since they rely on CSS Flexbox -- a 
 
 These layouts over-ride your theme's CSS for they pages they are enabled on.  Their purpose is to provide an out-of-the-box splash page for your site.
 
-These layouts are in a beta stage and are being tested and molded to work with every Backdrop theme as of 1/2016.
+These layouts are in a beta stage and are being tested and molded to work with every Backdrop theme as of 3/2016.
 
 The layouts contained within this set are:
 
@@ -29,6 +29,7 @@ juiced_up_full_screen_none -- a full screen content area with the site menu belo
 juiced_up_split_screen  -- a full screen, split screen content area with the site menu at the top
 juiced_up_split_screen_none  -- a full screen, split screen content area with the site menu below the fold
 juiced_up_startup66 -- a full screen 66% screen content area with common regions tech startup websites often use.
+juiced_up_demo -- the layout used on the demo website http://dev-backdropthemes.pantheon.io/node/36
 
 These layouts provide certain regions that supportive themes can use to add background images to from the UI.  One reason you might use this is for a site administrator (not the original development team) to easily add different background images to the full screen splash page whenever they want.
 
@@ -38,7 +39,7 @@ These layouts currently (temporarily) use thumbnails from Radix layouts while we
 
 ## Features
 
-* Responsive out of the box (coming soon)
+* Responsive out of the box
 * Works with most Backdrop themes.
 * Easily extendable to support new layouts and new regions.
 
@@ -46,35 +47,6 @@ These layouts currently (temporarily) use thumbnails from Radix layouts while we
 
 1. Download or clone this repository.
 2. Extract to */layouts* such that this README.md file is at layouts/juiced_up_layouts/README.md
-
-## How to override layouts
-
-1. To override layouts in your theme, copy the layout template (*layout-NAME.tpl.php*) from the */layouts/juiced_up_layouts* directory and place it in your theme templates directory.
-2. Make your changes and save.
-3. Clear the cache to see your changes.
-
-## How to add new regions
-
-Using *juiced_up_full_screen_bottom* as an example:
-
-1. Copy the layout directory (e.g. *juiced_up_full_screen_bottom*) from */layouts/juiced_up_layouts* and place it under */layout*.
-2. Rename *juiced_up_full_screen_bottom* with the name of your layout, *custom_layout*.
-3. Rename *juiced_up_full_screen_bottom.info* and *juiced_up_full_screen_bottom.png* to *custom_layout.info* and *custom-layout.png* respectively.
-4. Rename *layout--juiced-up-full-screen-bottom.tpl.php* to *layout--layout-name.tpl.php*.
-5. Edit *custom_layout.info* and add your region:
-
-Specify new regions for this layout there like:
-regions[header] = Header
-regions[custom_region] = Custom Region
-
-6. Edit *layout-your-layout-name.tpl.php* and add your region as follows:
-
-```
-<?php if (!empty($content['custom_region'])): ?>
-  <?php print $content['custom_region']; ?>
-<?php endif; ?>
-```
-
 
 ## License
 
