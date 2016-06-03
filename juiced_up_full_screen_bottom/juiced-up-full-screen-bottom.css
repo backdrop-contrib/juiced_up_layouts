@@ -2261,13 +2261,14 @@ html[dir='ltr'] {
 }
 
 /* Clearfix for all regions. */
-.layout--juiced-up-full-screen-bottom .l-header:after,
-.layout--juiced-up-full-screen-bottom .l-messages:after,
-.layout--juiced-up-full-screen-bottom main.l-content:after,
-.layout--juiced-up-full-screen-bottom .l-triptych:after,
-.layout--juiced-up-full-screen-bottom .l-big-statement:after,
-.layout--juiced-up-full-screen-bottom .l-footer-action:after,
-.layout--juiced-up-full-screen-bottom .l-footer:after {
+.layout--juiced-up-full-screen-bottom .l-header,
+.layout--juiced-up-full-screen-bottom main.juiced-main,
+.layout--juiced-up-full-screen-bottom .l-statement,
+.layout--juiced-up-full-screen-bottom .l-secondary,
+.layout--juiced-up-full-screen-bottom .l-top,
+.layout--juiced-up-full-screen-bottom .l-bottom,
+.layout--juiced-up-full-screen-bottom .l-calltoaction,
+.layout--juiced-up-full-screen-bottom .l-footer {
   display: table;
   clear: both;
   content: '';
@@ -2275,10 +2276,12 @@ html[dir='ltr'] {
 
 .layout--juiced-up-full-screen-bottom .l-header,
 .layout--juiced-up-full-screen-bottom .l-messages,
-.layout--juiced-up-full-screen-bottom main.l-content,
-.layout--juiced-up-full-screen-bottom .l-triptych,
-.layout--juiced-up-full-screen-bottom .l-big-statement,
-.layout--juiced-up-full-screen-bottom .l-footer-action,
+.layout--juiced-up-full-screen-bottom main.juiced-main,
+.layout--juiced-up-full-screen-bottom .l-statement,
+.layout--juiced-up-full-screen-bottom .l-secondary,
+.layout--juiced-up-full-screen-bottom .l-top,
+.layout--juiced-up-full-screen-bottom .l-bottom,
+.layout--juiced-up-full-screen-bottom .l-calltoaction,
 .layout--juiced-up-full-screen-bottom .l-footer {
   clear: both;
   -webkit-box-sizing: border-box;
@@ -2306,36 +2309,41 @@ html[dir='ltr'] {
   padding-top: 5px;
 }
 
-.layout--juiced-up-full-screen-bottom main.l-content,
-.layout--juiced-up-full-screen-bottom .l-triptych,
-.layout--juiced-up-full-screen-bottom .l-footer-action,
-.layout--juiced-up-full-screen-bottom .l-big_statement {
+.layout--juiced-up-full-screen-bottom .l-statement,
+.layout--juiced-up-full-screen-bottom .l-secondary,
+.layout--juiced-up-full-screen-bottom .l-top,
+.layout--juiced-up-full-screen-bottom main.juiced-main,
+.layout--juiced-up-full-screen-bottom .l-bottom,
+.layout--juiced-up-full-screen-bottom .l-calltoaction,
+.layout--juiced-up-full-screen-bottom .l-footer {
   text-align: center;
 }
 
-.layout--juiced-up-full-screen-bottom main.l-content {
+.layout--juiced-up-full-screen-bottom main.juiced-main, .layout--juiced-up-full-screen-bottom .l-statement {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   overflow: auto;
   width: 100% !important;
   max-width: 100% !important;
-  height: calc(100vh - 50px) !important;
+  height: 100vh !important;
   margin: 0 auto !important;
   padding: 0 !important;
   align-items: center;
   justify-content: center;
 }
 
-.layout--juiced-up-full-screen-bottom .l-triptych,
-.layout--juiced-up-full-screen-bottom .l-big-statement,
-.layout--juiced-up-full-screen-bottom .l-footer-action,
-.layout--juiced-up-full-screen-bottom .l-footer {
-  padding: 30px;
+.layout--juiced-up-full-screen-bottom main.juiced-main {
+  height: calc(100vh - 100px) !important;
 }
 
-.layout--juiced-up-full-screen-bottom .l-triptych {
-  padding-top: 90px;
+.layout--juiced-up-full-screen-bottom .l-statement,
+.layout--juiced-up-full-screen-bottom .l-secondary,
+.layout--juiced-up-full-screen-bottom .l-top,
+.layout--juiced-up-full-screen-bottom .l-bottom,
+.layout--juiced-up-full-screen-bottom .l-calltoaction,
+.layout--juiced-up-full-screen-bottom .l-footer {
+  padding: 30px;
 }
 
 .layout--juiced-up-full-screen-bottom .header-menu li {
@@ -2349,21 +2357,18 @@ html[dir='ltr'] {
   position: relative;
   top: 0 !important;
   width: 100% !important;
-  height: 50px !important;
   padding-top: 5px !important;
   align-self: flex-end;
+  height: 40px !important;
 }
 
-.layout--juiced-up-full-screen-bottom #nav {
+.layout--juiced-up-full-screen-bottom .l-header nav {
   margin-top: 5px;
 }
 
-html.admin-bar .layout--juiced-up-full-screen-bottom main.container {
-  height: calc(95vh - 50px) !important;
-}
-
-html.admin-bar .layout--juiced-up-full-screen-bottom .l-header {
-  position: relative;
-  top: 0;
-  height: 50px !important;
-}
+@media (max-width: 600px) {
+  .layout--juiced-up-full-screen-bottom main.container, .layout--juiced-up-full-screen-bottom .l-statement {
+    display: block;
+    height: auto !important;
+  }
+ }

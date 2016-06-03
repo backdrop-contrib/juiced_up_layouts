@@ -1,6 +1,6 @@
 /**
  * @file
- * CSS for the two column layout.
+ *
  */
 * {
   box-sizing: border-box;
@@ -2261,39 +2261,36 @@ html[dir='ltr'] {
 }
 
 /* Clearfix for all regions. */
-.layout--juiced-up-full-screen-right .l-header:after,
 .layout--juiced-up-full-screen-right .l-messages:after,
-.layout--juiced-up-full-screen-right main.l-content:after,
-.layout--juiced-up-full-screen-right .l-triptych:after,
-.layout--juiced-up-full-screen-right .l-big-statement:after,
-.layout--juiced-up-full-screen-right .l-footer-action:after,
+.layout--juiced-up-full-screen-right .l-header:after,
+.layout--juiced-up-full-screen-right main.container:after,
+.layout--juiced-up-full-screen-right .l-statement:after,
+.layout--juiced-up-full-screen-right .l-secondary:after,
+.layout--juiced-up-full-screen-right .l-top:after,
+.layout--juiced-up-full-screen-right .l-bottom:after,
+.layout--juiced-up-full-screen-right .l-calltoaction:after,
 .layout--juiced-up-full-screen-right .l-footer:after {
   display: table;
   clear: both;
   content: '';
 }
 
-.layout--juiced-up-full-screen-right .l-header {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.layout--juiced-up-full-screen-right .l-messages,
+.layout--juiced-up-full-screen-right .l-statement,
+.layout--juiced-up-full-screen-right .l-secondary,
+.layout--juiced-up-full-screen-right .l-top,
+.layout--juiced-up-full-screen-right .l-bottom,
+.layout--juiced-up-full-screen-right .l-calltoaction,
+.layout--juiced-up-full-screen-right .l-footer {
+  clear: both;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  height: 100vh !important;
   margin-right: auto;
   margin-left: auto;
-  align-items: flex-start;
-  justify-content: center;
 }
 
-.layout--juiced-up-full-screen-right .l-messages,
-.layout--juiced-up-full-screen-right main.l-content,
-.layout--juiced-up-full-screen-right .l-triptych,
-.layout--juiced-up-full-screen-right .l-big-statement,
-.layout--juiced-up-full-screen-right .l-footer-action,
-.layout--juiced-up-full-screen-right .l-footer {
-  clear: both;
+.layout--juiced-up-full-screen-right .l-header {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -2319,11 +2316,31 @@ html[dir='ltr'] {
   padding-top: 5px;
 }
 
-.layout--juiced-up-full-screen-right main.l-content,
-.layout--juiced-up-full-screen-right .l-triptych,
-.layout--juiced-up-full-screen-right .l-footer-action,
-.layout--juiced-up-full-screen-right .l-big_statement {
+.layout--juiced-up-full-screen-right .l-content,
+.layout--juiced-up-full-screen-right .l-statement,
+.layout--juiced-up-full-screen-right .l-secondary,
+.layout--juiced-up-full-screen-right .l-top,
+.layout--juiced-up-full-screen-right .l-bottom,
+.layout--juiced-up-full-screen-right .l-calltoaction,
+.layout--juiced-up-full-screen-right .l-footer {
   text-align: center;
+}
+
+.layout--juiced-up-full-screen-right .l-statement, .layout--juiced-up-full-screen-right main.container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  align-items: stretch;
+  justify-content: center;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+html.admin-bar .layout--juiced-up-full-screen-right main.container {
+  height: calc(100vh - 30px) !important;
 }
 
 .layout--juiced-up-full-screen-right .l-header .header-menu li {
@@ -2350,14 +2367,35 @@ html[dir='ltr'] {
   display: block;
 }
 
-.layout--juiced-up-full-screen-right .l-triptych,
-.layout--juiced-up-full-screen-right .l-big-statement,
-.layout--juiced-up-full-screen-right .l-footer-action,
+.layout--juiced-up-full-screen-right .l-statement,
+.layout--juiced-up-full-screen-right .l-secondary,
+.layout--juiced-up-full-screen-right .l-top,
+.layout--juiced-up-full-screen-right .l-bottom,
+.layout--juiced-up-full-screen-right .l-calltoaction,
 .layout--juiced-up-full-screen-right .l-footer {
   padding: 30px;
 }
 
-.layout--juiced-up-full-screen-right .l-triptych {
-  padding-top: 90px;
-  text-align: center;
+.l-content {
+  order: 1;
+}
+
+.l-header {
+  order: 2;
+}
+
+@media (max-width: 600px) {
+.layout--juiced-up-full-screen-right main.container, .layout--juiced-up-full-screen-right .l-statement,
+   html.admin-bar .layout--juiced-up-full-screen-right main.container {
+    height: auto !important;
+  }
+
+.l-content {
+  order: 2;
+}
+
+.l-header {
+  order: 1;
+}
+
 }

@@ -15,33 +15,24 @@
  * - $attributes: Array of additional HTML attributes to be added to the layout
  *     wrapper. Flatten using backdrop_attributes().
  * - $content: An array of content, each item in the array is keyed to one
- *   region of the layout. This layout supports the following sections:
- *   - $content['content']
- *   - $content['header']
- *   - $content['triptych_first']
- *   - $content['triptych_middle']
- *   - $content['triptych_last']
- *   - $content['big_statement']
- *   - $content['footer_action']
- *   - $content['footer']
+ *   region of the layout. This layout supports the following divs:
  */
 ?>
 <div class="layout--juiced-up-full-screen-bottom container <?php print implode(' ', $classes); ?>" <?php print backdrop_attributes($attributes); ?> >
-
   <div id="skip-link">
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
   </div>
 
-  <main class="l-content container juiced-main" role="main" aria-label="<?php print t('Main content'); ?>">
+  <main class="l-wrapper container juiced-main" role="main" aria-label="<?php print t('Main content'); ?>">
       <a id="main-content"></a>
 
     <?php if ($messages): ?>
-    <div class="l-messages" role="contentinfo" aria-label="<?php print t('Status messages'); ?>">
-      <?php print $messages; ?>
-    </div>
+      <div class="l-messages" role="status" aria-label="<?php print t('Status messages'); ?>">
+        <?php print $messages; ?>
+      </div>
     <?php endif; ?>
 
-      <section class="l-content col-12" role="region">
+    <div class="l-content col-12" role="region">
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
         <h1 class="page-title">
@@ -51,46 +42,68 @@
       <?php print render($title_suffix); ?>
 
       <?php if ($tabs): ?>
-        <div class="tabs" role="tablist" aria-label="<?php print t('Admin Content Tabs'); ?>">
+        <nav class="tabs small-12 column" role="tablist" aria-label="<?php print t('Admin Content Navigation Tabs'); ?>">
           <?php print $tabs; ?>
-        </div>
+        </nav>
       <?php endif; ?>
 
       <?php print $action_links; ?>
       <?php print $content['content']; ?>
-      </section>
+      </div>
   </main>
 
-  <?php if ($content['header']): ?>
+   <?php if ($content['header']): ?>
     <header class="l-header col-12" role="banner" aria-label="<?php print t('Site header'); ?>">
       <?php print $content['header']; ?>
     </header>
+    <?php endif; ?>
+
+  <?php if ($content['top']): ?>
+      <div class="l-top col-12" role="region">
+      <?php print $content['top']; ?>
+      </div>
   <?php endif; ?>
 
-  <?php if ($content['triptych_first'] || $content['triptych_middle'] || $content['triptych_last']): ?>
-    <section class="l-triptych container" role="region">
-      <div class="l-triptych-first col-12 col-sm-4">
-        <?php print $content['triptych_first']; ?>
+  <?php if ($content['statement1']): ?>
+      <div class="l-statement l-statement1 col-12" role="region">
+        <?php print $content['statement1']; ?>
       </div>
-      <div class="l-triptych-middle col-12 col-sm-4">
-        <?php print $content['triptych_middle']; ?>
-      </div>
-      <div class="l-triptych-last col-12 col-sm-4">
-        <?php print $content['triptych_last']; ?>
-      </div>
-    </section>
   <?php endif; ?>
 
-  <?php if ($content['big_statement']): ?>
-      <section class="l-big-statement col-12" role="region">
-        <?php print $content['big_statement']; ?>
-      </section>
+  <?php if ($content['secondary1']): ?>
+      <div class="l-secondary l-secondary1 col-12" role="region">
+        <?php print $content['secondary1']; ?>
+      </div>
   <?php endif; ?>
 
-  <?php if ($content['footer_action']): ?>
-    <footer class="l-footer-action col-12" role="secondary" aria-label="<?php print t('Action to take'); ?>">
-      <?php print $content['footer_action']; ?>
-    </footer>
+  <?php if ($content['statement2']): ?>
+      <div class="l-statement l-statement2 col-12" role="region">
+        <?php print $content['statement2']; ?>
+      </div>
+  <?php endif; ?>
+
+  <?php if ($content['secondary2']): ?>
+      <div class="l-secondary l-secondary2 col-12" role="region">
+        <?php print $content['secondary2']; ?>
+      </div>
+  <?php endif; ?>
+
+  <?php if ($content['statement3']): ?>
+      <div class="l-statement l-statement3 col-12" role="region">
+        <?php print $content['statement3']; ?>
+      </div>
+  <?php endif; ?>
+
+  <?php if ($content['bottom']): ?>
+    <div class="l-bottom col-12" role="region">
+        <?php print $content['bottom']; ?>
+    </div>
+  <?php endif; ?>
+
+  <?php if ($content['calltoaction']): ?>
+      <footer class="l-calltoaction col-12" role="secondary" aria-label="<?php print t('Action to take'); ?>">
+        <?php print $content['calltoaction']; ?>
+      </footer>
   <?php endif; ?>
 
   <?php if ($content['footer']): ?>

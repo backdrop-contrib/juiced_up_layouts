@@ -20,7 +20,7 @@
  *   region of the layout. This layout supports the following divs:
  */
 ?>
-<div class="layout--juiced-up-split-screen-none container <?php print implode(' ', $classes); ?>"<?php print backdrop_attributes($attributes); ?>>
+<div class="layout--juiced-up-split-screen-flipped container <?php print implode(' ', $classes); ?>"<?php print backdrop_attributes($attributes); ?>>
   <div id="skip-link">
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
   </div>
@@ -28,11 +28,25 @@
   <main class="l-wrapper container" role="main" aria-label="<?php print t('Main content'); ?>">
     <a id="main-content"></a>
 
+    <?php if ($content['header']): ?>
+    <header class="l-header col-12" role="banner" aria-label="<?php print t('Site header'); ?>">
+      <?php print $content['header']; ?>
+    </header>
+    <?php endif; ?>
+
     <?php if ($messages): ?>
       <div class="l-messages col-12" role="status" aria-label="<?php print t('Status messages'); ?>">
       <?php print $messages; ?>
       </div>
     <?php endif; ?>
+
+    <div class="l-sidebar l-sidebar1 juiced-main-split col-12 col-sm-6" role="region">
+      <div>
+      <?php if ($content['sidebar']): ?>
+        <?php print $content['sidebar']; ?>
+      <?php endif; ?>
+      </div>
+    </div>
 
     <div class="l-content juiced-main col-12 col-sm-6" role="region">
       <div>
@@ -54,21 +68,7 @@
       <?php print $content['content']; ?>
       </div>
     </div>
-
-    <div class="l-sidebar l-sidebar1 juiced-main-split col-12 col-sm-6" role="region">
-      <div>
-      <?php if ($content['sidebar']): ?>
-        <?php print $content['sidebar']; ?>
-      <?php endif; ?>
-      </div>
-    </div>
   </main>
-
-  <?php if ($content['header']): ?>
-    <header class="l-header col-12" role="banner" aria-label="<?php print t('Site header'); ?>">
-      <?php print $content['header']; ?>
-    </header>
-  <?php endif; ?>
 
   <?php if ($content['top']): ?>
       <div class="l-top col-12" role="region">

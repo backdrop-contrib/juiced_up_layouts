@@ -1,11 +1,13 @@
 Juiced Up Layouts
 -----------------
 
-A set of 8 splash page flexbox based layouts for Backdrop CMS.
+A set of 8 splash page flexbox based layouts for Backdrop CMS 1.4+
 
 Backdrop CMS allows you to easily specify layouts (design skeletons/wireframes) for a URL on your site (or set of paths to pages).
 One use-case you may have for your website is a splash page, full screen page, single page marketing website, or "big sell" page.
-These set of layouts seek to provide this.  These layouts are not for text rich, content heavy pages.
+These set of layouts seek to provide this.
+
+These layouts are not for text rich, content heavy pages.  They are for "sign up now" pages, not "let me tell you my life story" pages.
 
 These set of layouts provide/rely on a lightweight CSS flexbox grid system called JuicedCSS by Joey Lea ( http://juicedcss.com ).
 You may read about using this layout system here: http://juicedcss.com/bower_components/juiced/docs/layout.html .
@@ -15,12 +17,9 @@ One of the goals of these layouts is to be as semantic HTML and accessible as po
 
 These layouts are not for every demographic since they rely on CSS Flexbox -- a newer technology.  Check out which browsers support Flexbox at http://caniuse.com/#search=flexbox .
 
-These layouts over-ride your theme's CSS for they pages they are enabled on.  Their purpose is to provide an out-of-the-box splash page for your site.
-
-These layouts are in a beta stage and are being tested and molded to work with every Backdrop theme as of 3/2016.
+These layouts over-ride your theme's CSS for they pages they are enabled on.  Their purpose is to provide an out-of-the-box splash page for your site.  It is not recommended to take something like "split screen layout" and try to theme it into your own separate design for every page on your site.
 
 The layouts contained within this set are:
-
 juiced_up_full_screen_top -- a full screen content area with the site menu at the top
 juiced_up_full_screen_bottom -- a full screen content area with the site menu at the bottom
 juiced_up_full_screen_left -- a full screen content area with the site menu at the left
@@ -28,14 +27,18 @@ juiced_up_full_screen_right -- a full screen content area with the site menu at 
 juiced_up_full_screen_none -- a full screen content area with the site menu below the fold
 juiced_up_split_screen  -- a full screen, split screen content area with the site menu at the top
 juiced_up_split_screen_none  -- a full screen, split screen content area with the site menu below the fold
-juiced_up_startup66 -- a full screen 66% screen content area with common regions tech startup websites often use.
-juiced_up_demo -- the layout used on the demo website http://dev-backdropthemes.pantheon.io/node/36
+juiced_up_split_screen_flipped  -- a full screen, split screen content area with the site menu at the top
+juiced_up_split_screen_none_flipped  -- a full screen, split screen content area with the site menu below the fold
 
-These layouts provide certain regions that supportive themes can use to add background images to from the UI.  One reason you might use this is for a site administrator (not the original development team) to easily add different background images to the full screen splash page whenever they want.
+These layouts provide certain regions that supportive themes can use to add background images to from the UI.  One reason you might use this is for a site editor (not the original development team) to easily add different background images to the full screen splash page whenever they want.
+
+CAN I SWITCH MY LAYOUT BETWEEN BOOTSTRAP, THIS ONE, AND SOME OTHER CSS FRAMEWORK TO CHECK IT OUT?
+- yes, layouts made for Backdrop 1.4+ are made to be interchangeble so that headers in your layout transfer to headers in some other layout, boxes in the sidebar to other sidebars, content to content, groups of 4 to groups of 4, and so forth, no matter what the name or framework or size or full page or centered or not.
 
 JuicedCSS is under the MIT license.  Special thanks to Joey Lea for this grid system!
 
-These layouts currently (temporarily) use thumbnails from Radix layouts while we develop thumbnails especially for this set.  Credits go to @arshad for them.
+## Documentation
+http://dev-backdropthemes.pantheonsite.io/docs14
 
 ## Features
 

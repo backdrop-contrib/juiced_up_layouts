@@ -20,7 +20,7 @@
  *   region of the layout. This layout supports the following divs:
  */
 ?>
-<div class="layout--juiced-up-split-screen-none container <?php print implode(' ', $classes); ?>"<?php print backdrop_attributes($attributes); ?>>
+<div class="layout--juiced-up-split-screen-none-flipped container <?php print implode(' ', $classes); ?>"<?php print backdrop_attributes($attributes); ?>>
   <div id="skip-link">
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
   </div>
@@ -33,6 +33,14 @@
       <?php print $messages; ?>
       </div>
     <?php endif; ?>
+
+    <div class="l-sidebar l-sidebar1 juiced-main-split col-12 col-sm-6" role="region">
+      <div>
+      <?php if ($content['sidebar']): ?>
+        <?php print $content['sidebar']; ?>
+      <?php endif; ?>
+      </div>
+    </div>
 
     <div class="l-content juiced-main col-12 col-sm-6" role="region">
       <div>
@@ -52,14 +60,6 @@
 
       <?php print $action_links; ?>
       <?php print $content['content']; ?>
-      </div>
-    </div>
-
-    <div class="l-sidebar l-sidebar1 juiced-main-split col-12 col-sm-6" role="region">
-      <div>
-      <?php if ($content['sidebar']): ?>
-        <?php print $content['sidebar']; ?>
-      <?php endif; ?>
       </div>
     </div>
   </main>

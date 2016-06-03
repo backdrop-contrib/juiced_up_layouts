@@ -1,12 +1,13 @@
-name = Juiced Up Full Screen Bottom
+name = Juiced Up Split Screen None Flipped
 version = BACKDROP_VERSION
 type = layout
 backdrop = 1.x
 
 ; Include file for special preprocessing of this layout's variables.
-; file = juiced_up_full_screen_bottom.php
+; file = juiced_up_split_screen_none_flipped.php
 
 ; Specify regions for this layout.
+regions[sidebar] = Counter Point
 regions[content] = Content
 regions[header] = Header
 regions[top] = Top

@@ -2263,31 +2263,34 @@ html[dir="ltr"] {
 }
 
 /* Clearfix for all regions. */
-.layout--juiced-up-full-screen-top .l-header:after,
-.layout--juiced-up-full-screen-top .l-messages:after,
-.layout--juiced-up-full-screen-top main.l-content:after,
-.layout--juiced-up-full-screen-top .l-triptych:after,
-.layout--juiced-up-full-screen-top .l-big-statement:after,
-.layout--juiced-up-full-screen-top .l-footer-action:after,
-.layout--juiced-up-full-screen-top .l-footer:after {
-  content: "";
+.layout--juiced-up-full-screen-top .l-header,
+.layout--juiced-up-full-screen-top main.container,
+.layout--juiced-up-full-screen-top .l-statement,
+.layout--juiced-up-full-screen-top .l-secondary,
+.layout--juiced-up-full-screen-top .l-top,
+.layout--juiced-up-full-screen-top .l-bottom,
+.layout--juiced-up-full-screen-top .l-calltoaction,
+.layout--juiced-up-full-screen-top .l-footer {
   display: table;
   clear: both;
+  content: '';
 }
 
 .layout--juiced-up-full-screen-top .l-header,
 .layout--juiced-up-full-screen-top .l-messages,
-.layout--juiced-up-full-screen-top main.l-content,
-.layout--juiced-up-full-screen-top .l-triptych,
-.layout--juiced-up-full-screen-top .l-big-statement,
-.layout--juiced-up-full-screen-top .l-footer-action,
+.layout--juiced-up-full-screen-top main.container,
+.layout--juiced-up-full-screen-top .l-statement,
+.layout--juiced-up-full-screen-top .l-secondary,
+.layout--juiced-up-full-screen-top .l-top,
+.layout--juiced-up-full-screen-top .l-bottom,
+.layout--juiced-up-full-screen-top .l-calltoaction,
 .layout--juiced-up-full-screen-top .l-footer {
-  margin-left: auto;
-  margin-right: auto;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
   clear: both;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .layout--juiced-up-full-screen-top.layout {
@@ -2308,20 +2311,23 @@ html[dir="ltr"] {
   padding-top: 5px;
 }
 
-.layout--juiced-up-full-screen-top main.l-content,
-.layout--juiced-up-full-screen-top .l-triptych,
-.layout--juiced-up-full-screen-top .l-footer-action,
-.layout--juiced-up-full-screen-top .l-big_statement {
+.layout--juiced-up-full-screen-top .l-statement,
+.layout--juiced-up-full-screen-top .l-secondary,
+.layout--juiced-up-full-screen-top .l-top,
+.layout--juiced-up-full-screen-top main.container,
+.layout--juiced-up-full-screen-top .l-bottom,
+.layout--juiced-up-full-screen-top .l-calltoaction,
+.layout--juiced-up-full-screen-top .l-footer {
   text-align: center;
 }
 
-.layout--juiced-up-full-screen-top main.l-content {
+.layout--juiced-up-full-screen-top main.container, .layout--juiced-up-full-screen-top .l-statement {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 50px) !important;
+  height: 100vh !important;
   max-width: 100% !important;
   width: 100% !important;
   margin: 0 auto !important;
@@ -2329,15 +2335,21 @@ html[dir="ltr"] {
   overflow: auto;
 }
 
-.layout--juiced-up-full-screen-top .l-triptych,
-.layout--juiced-up-full-screen-top .l-big-statement,
-.layout--juiced-up-full-screen-top .l-footer-action,
-.layout--juiced-up-full-screen-top .l-footer {
-  padding: 30px;
+.layout--juiced-up-full-screen-top main.container {
+    align-items: flex-start;
 }
 
-.layout--juiced-up-full-screen-top .l-triptych {
-  padding-top: 90px;
+html.admin-bar .layout--juiced-up-full-screen-top main.container {
+  height: calc(100vh - 30px) !important;
+}
+
+.layout--juiced-up-full-screen-top .l-statement,
+.layout--juiced-up-full-screen-top .l-secondary,
+.layout--juiced-up-full-screen-top .l-top,
+.layout--juiced-up-full-screen-top .l-bottom,
+.layout--juiced-up-full-screen-top .l-calltoaction,
+.layout--juiced-up-full-screen-top .l-footer {
+  padding: 30px;
 }
 
 .layout--juiced-up-full-screen-top .header-menu li {
@@ -2348,21 +2360,16 @@ html[dir="ltr"] {
 }
 
 .layout--juiced-up-full-screen-top .l-header {
-  align-self: flex-end;
+  align-self: flex-start;
   width: 100% !important;
-  height: 50px !important;
   padding-top: 5px !important;
   position: relative;
   top: 0px !important;
 }
 
-html.admin-bar .layout--juiced-up-full-screen-top main.container {
-  height: calc(95vh - 50px) !important;
-}
-
-html.admin-bar .layout--juiced-up-full-screen-top .l-header {
-  height: 50px !important;
-  position: relative;
-  top: 0px;
-}
-
+@media (max-width: 600px) {
+  .layout--juiced-up-full-screen-top main.container, .layout--juiced-up-full-screen-top .l-statement {
+    display: block;
+    height: auto !important;
+  }
+ }
