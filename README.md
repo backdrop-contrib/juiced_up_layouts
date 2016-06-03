@@ -20,17 +20,28 @@ These layouts are not for every demographic since they rely on CSS Flexbox -- a 
 These layouts over-ride your theme's CSS for they pages they are enabled on.  Their purpose is to provide an out-of-the-box splash page for your site.  It is not recommended to take something like "split screen layout" and try to theme it into your own separate design for every page on your site.
 
 The layouts contained within this set are:
+
 juiced_up_full_screen_top -- a full screen content area with the site menu at the top
+
 juiced_up_full_screen_bottom -- a full screen content area with the site menu at the bottom
+
 juiced_up_full_screen_left -- a full screen content area with the site menu at the left
+
 juiced_up_full_screen_right -- a full screen content area with the site menu at the right
+
 juiced_up_full_screen_none -- a full screen content area with the site menu below the fold
+
+
 juiced_up_split_screen  -- a full screen, split screen content area with the site menu at the top
+
 juiced_up_split_screen_none  -- a full screen, split screen content area with the site menu below the fold
+
 juiced_up_split_screen_flipped  -- a full screen, split screen content area with the site menu at the top
+
 juiced_up_split_screen_none_flipped  -- a full screen, split screen content area with the site menu below the fold
 
 These layouts provide certain regions that supportive themes can use to add background images to from the UI.  One reason you might use this is for a site editor (not the original development team) to easily add different background images to the full screen splash page whenever they want.
+
 
 CAN I SWITCH MY LAYOUT BETWEEN BOOTSTRAP, THIS ONE, AND SOME OTHER CSS FRAMEWORK TO CHECK IT OUT?
 - yes, layouts made for Backdrop 1.4+ are made to be interchangeble so that headers in your layout transfer to headers in some other layout, boxes in the sidebar to other sidebars, content to content, groups of 4 to groups of 4, and so forth, no matter what the name or framework or size or full page or centered or not.
